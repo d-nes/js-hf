@@ -1,0 +1,22 @@
+{
+  "name": "js-hf",
+  "version": "1.0.0",
+  "description": "TV Show Manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-nes/js-hf.git"
+  },
+  "author": "Denes Urban",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/d-nes/js-hf/issues"
+  },
+  "homepage": "https://github.com/d-nes/js-hf#readme"
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
