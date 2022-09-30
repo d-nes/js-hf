@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TV Show Manager</title>
+
+    <style>
+        body {
+            padding-top: 0px;
+            padding-left: 15px;
+        }
+        .save{
+            width: 60px;
+        }
+        .cancel{
+            width: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="width: 40%; text-align: left; margin-left: auto; margin-right: auto;" cellpadding="2" cellspacing="2">
+        <tbody>
+            <tr>
+                <td>
+                    <h1>
+                        Edit Show
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: right;">
+                    Title:
+                </td>
+                <td>
+                    <input type="text";>
+                    <button onclick="location.href='/details'" class="save">Save</button>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: right;">
+                    Description:
+                </td>
+                <td>
+                    <input type="text";>
+                    <button onclick="location.href='/details'" class="cancel">Cancel</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

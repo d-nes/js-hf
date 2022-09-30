@@ -11,7 +11,10 @@
             padding-left: 15px;
         }
 
-        .button {
+        .new {
+            
+        }
+        .seen{
             
         }
     </style>
@@ -27,7 +30,7 @@
                 <td style="width: 25%;">
 
                 </td>
-                <td style="width: 25%; text-align: center"><button class="button">Add new Show</button></td>
+                <td style="width: 25%; text-align: center"><button onclick="location.href='/new_show'" class="new">Add new Show</button></td>
             </tr>
         </tbody>
     </table>
@@ -51,19 +54,21 @@
         cellspacing="2">
         <tbody>
             <tr style="height: 50px;">
-                <td style="width: 50%;"></td>
-                <td style="width: 25%;"></td>
-                <td style="width: 25%;"></td>
+                <td style="width: 50%; text-align: center;">
+                    <a href="/details">Friends</a>
+                </td>
+                <td style="width: 25%; text-align: center;">S01E03</td>
+                <td style="width: 25%; text-align: center"><button class="seen">Mark as Seen</button></td>
             </tr>
             <tr style="height: 50px;">
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="width: 50%; text-align: center;">Rings of Power</td>
+                <td style="width: 25%; text-align: center;"></td>
+                <td style="width: 25%; text-align: center"><button class="seen">Mark as Seen</button></td>
             </tr>
             <tr style="height: 50px;">
-                <td></td>
-                <td></td>
-                <td></td>
+                <td style="width: 50%; text-align: center;"></td>
+                <td style="width: 25%; text-align: center;"></td>
+                <td style="width: 25%; text-align: center"><button class="seen">Mark as Seen</button></td>
             </tr>
         </tbody>
     </table>

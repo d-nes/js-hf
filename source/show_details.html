@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TV Show Manager</title>
+
+    <style>
+        body {
+            padding-top: 0px;
+            padding-left: 15px;
+        }
+
+        .new {
+            
+        }
+        .edit{
+
+        }
+        .delete{
+
+        }
+        .back{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table style="width: 80%; text-align: left; margin-left: auto; margin-right: auto;" cellpadding="2" cellspacing="2">
+        <tbody>
+            <tr>
+                <td style="width: 40%">
+                    <h1>
+                        Friends
+                        <button onclick="location.href='/edit_show'" class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </h1>
+                </td>
+                <td style="text-align: right;">
+                    Best friends Rachel Green, Ross Geller, Joey Tribbiani, Chandler Bing, Monica Geller, and Phoebe Buffay learn to live, love, and navigate the pitfalls of friendship in New York City.
+                </td>
+                <td style="width: 10%; text-align: center">
+                    <button onclick="location.href='/new_episode'" class="new">Add new episode</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table style="width: 80%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2"
+        cellspacing="2">
+        <tbody>
+            <tr style="height: 50px;">
+                <td style="width: 15%; text-align: center">S01E01</td>
+                <td style="width: 60%;">The One Where Monica Gets a Roommate</td>
+                <td style="width: 5%; text-align: center">
+                    <input type="checkbox" checked>
+                </td>
+                <td style="width: 10%; text-align: center">
+                    <button onclick="location.href='/edit_episode'" class="edit">Edit</button>
+                </td>
+                <td style="width: 10%; text-align: center">
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td style="width: 15%; text-align: center">S01E02</td>
+                <td style="width: 60%;">The One with the Sonogram at the End</td>
+                <td style="width: 5%; text-align: center">
+                    <input type="checkbox" checked>
+                </td>
+                <td style="width: 10%; text-align: center">
+                    <button onclick="location.href='/edit_episode'" class="edit">Edit</button>
+                </td>
+                <td style="width: 10%; text-align: center">
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+            <tr style="height: 50px;">
+                <td style="width: 15%; text-align: center">S01E03</td>
+                <td style="width: 60%;">The One with the Thumb</td>
+                <td style="width: 5%; text-align: center">
+                    <input type="checkbox">
+                </td>
+                <td style="width: 10%; text-align: center">
+                    <button onclick="location.href='/edit_episode'" class="edit">Edit</button>
+                </td>
+                <td style="width: 10%; text-align: center">
+                    <button class="delete">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table style="width: 80%; text-align: left; margin-left: auto; margin-right: auto;" cellpadding="2" cellspacing="2">
+        <tbody>
+            <tr>
+                <td><button onclick="location.href='/'" class="back">Back</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
