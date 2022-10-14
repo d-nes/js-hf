@@ -1,11 +1,11 @@
 /**
- * Deletes a show determined by an id parameter
+ * Deletes a show determined by :showid
  * @param {*} objects 
- * @returns template function
+ * @returns 
  */
  module.exports = function(objects) {
-    return function (req, res, next) {
-        console.log('delShowMW');
-        next();
+    return function (req, res) {
+        console.log(`delShowMW: ${req.params.showid}`);
+        res.redirect('/');
     }
 }

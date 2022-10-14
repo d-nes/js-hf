@@ -1,7 +1,7 @@
 /**
  * Gets a list of stored shows
  * @param {*} objects 
- * @returns template function
+ * @returns 
  */
 module.exports = function(objects) {
     return function (req, res, next) {

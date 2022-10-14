@@ -1,11 +1,11 @@
 /**
- * Deletes an episode determined by an id parameter
+ * Deletes an episode determined by :episodeid
  * @param {*} objects 
- * @returns template function
+ * @returns 
  */
  module.exports = function(objects) {
-    return function (req, res, next) {
-        console.log('delEpisodeMW');
-        next();
+    return function (req, res) {
+        console.log(`delEpisodeMW: ${req.params.showid} ${req.params.episodeid}`);
+        res.redirect(`/show/${req.params.showid}`);
     }
 }

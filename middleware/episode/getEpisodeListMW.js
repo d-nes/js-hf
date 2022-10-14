@@ -1,11 +1,11 @@
 /**
  * Gets a list of stored episodes
  * @param {*} objects 
- * @returns template function
+ * @returns 
  */
  module.exports = function(objects) {
     return function (req, res, next) {
-        console.log('getEpisodeListMW');
+        console.log(`getEpisodeListMW: ${req.params.showid}`);
         next();
     }
 }

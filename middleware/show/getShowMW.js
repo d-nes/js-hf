@@ -1,11 +1,11 @@
 /**
- * Gets a show determined by an id parameter
+ * Gets a show determined by :showid
  * @param {*} objects 
- * @returns template function
+ * @returns 
  */
  module.exports = function(objects) {
     return function (req, res, next) {
-        console.log('getShowMW');
+        console.log(`getShowMW: ${req.params.showid}`);
         next();
     }
 }
