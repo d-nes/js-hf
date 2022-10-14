@@ -1,16 +1,39 @@
 const renderMW = require('../middleware/renderMW');
+const saveShowMW = require('../middleware/show/saveShowMW');
+const delShowMW = require('../middleware/show/delShowMW');
+const getShowMW = require('../middleware/show/getShowMW');
+const getShowListMW = require('../middleware/show/getShowListMW');
+const saveEpisodeMW = require('../middleware/episode/saveEpisodeMW');
+const delEpisodeMW = require('../middleware/episode/delEpisodeMW');
+const getEpisodeMW = require('../middleware/episode/getEpisodeMW');
+const getEpisodeListMW = require('../middleware/episode/getEpisodeListMW');
 
 module.exports = function (app, path) {
+    const objects = {};
+
     app.get('/',
-        renderMW('index', path));
+        getShowListMW(objects),
+        renderMW('index', path, objects));
+
     app.get('/details', 
-        renderMW('show_details', path));
+        getEpisodeListMW(objects),
+        renderMW('show_details', path, objects));
+
     app.get('/new_show',
-        renderMW('new_show', path));
+        saveShowMW(objects),
+        renderMW('new_show', path, objects));
+
     app.get('/edit_show',
-        renderMW('edit_show', path));
+        getShowMW(objects),
+        saveShowMW(objects),
+        renderMW('edit_show', path, objects));
+
     app.get('/new_episode',
-        renderMW('new_episode', path));
+        saveEpisodeMW(objects),
+        renderMW('new_episode', path, objects));
+
     app.get('/edit_episode',
-        renderMW('edit_episode', path));
+        getEpisodeMW(objects),
+        saveEpisodeMW(objects),
+        renderMW('edit_episode', path, objects));
 }
