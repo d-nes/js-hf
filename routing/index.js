@@ -1,34 +1,16 @@
-const { Console } = require('console');
-const { appendFileSync } = require('fs');
-const path = require('path');
 const renderMW = require('../middleware/renderMW');
 
-module.exports = function (app) {
-    /*
-    app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '../source/index.html'));
-    })
-    */
+module.exports = function (app, path) {
     app.get('/',
-        renderMW("index"));
-
-    app.get('/details', (req, res) => {
-        res.sendFile(path.join(__dirname, '../source/show_details.html'));
-    })
-
-    app.get('/new_show', (req, res) => {
-        res.sendFile(path.join(__dirname, '../source/new_show.html'));
-    })
-
-    app.get('/edit_show', (req, res) => {
-        res.sendFile(path.join(__dirname, '../source/edit_show.html'));
-    })
-
-    app.get('/new_episode', (req, res) => {
-        res.sendFile(path.join(__dirname, '../source/new_episode.html'));
-    })
-
-    app.get('/edit_episode', (req, res) => {
-        res.sendFile(path.join(__dirname, '../source/edit_episode.html'));
-    })
+        renderMW('index', path));
+    app.get('/details', 
+        renderMW('show_details', path));
+    app.get('/new_show',
+        renderMW('new_show', path));
+    app.get('/edit_show',
+        renderMW('edit_show', path));
+    app.get('/new_episode',
+        renderMW('new_episode', path));
+    app.get('/edit_episode',
+        renderMW('edit_episode', path));
 }
