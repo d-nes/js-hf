@@ -1,9 +1,16 @@
+const { Console } = require('console');
+const { appendFileSync } = require('fs');
 const path = require('path');
+const renderMW = require('../middleware/renderMW');
 
 module.exports = function (app) {
+    /*
     app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, '../source/index.html'));
     })
+    */
+    app.get('/',
+        renderMW("index"));
 
     app.get('/details', (req, res) => {
         res.sendFile(path.join(__dirname, '../source/show_details.html'));
