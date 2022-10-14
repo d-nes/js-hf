@@ -1,2 +1,2 @@
 # js-hf
-Szerver oldali JavaScript házi
+[Szerver oldali JavaScript házi](./topkqh_spec.pdf)
