@@ -5,9 +5,9 @@
  */
 module.exports = function(objects) {
     return function (req, res, next) {
-        const shows = ['Friends', 'Rings of Power']
-        objects = shows;
+        const shows = ['Friends', 'Rings of Power'];
         console.log('getShowListMW');
+        objects = shows;
         next();
     }
 }

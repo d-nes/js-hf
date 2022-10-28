@@ -3,11 +3,12 @@
 
 <%- include('../partials/header_wide') %>
 
-<% objects.forEach(function(show) { %>
-    <p><%= show %></p>
-    <% }); %>
-
 <body>
+    <ul>
+        <% objects.forEach(function(show) { %>
+            <p><%= show %></p>
+            <% }); %>
+    </ul>
     <table style="width: 80%; text-align: left; margin-left: auto; margin-right: auto;" cellpadding="2" cellspacing="2">
         <tbody>
             <tr>

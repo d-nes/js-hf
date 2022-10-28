@@ -10,10 +10,10 @@ const getEpisodeListMW = require('../middleware/episode/getEpisodeListMW');
 const markEpisodeMW = require('../middleware/episode/markEpisodeMW');
 
 module.exports = function (app, path) {
-    const objects = {};
+    var objects = [];
 
     app.get('/',
-        getShowListMW(objects),
+        getShowListMW(objects), //how do i get a return value form this??
         renderMW('index', path, objects));
 
     app.get('/new_show',
