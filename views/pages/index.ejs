@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/header_wide') %>
+
+<body>
+    <table style="width: 80%; text-align: left; margin-left: auto; margin-right: auto;" cellpadding="2" cellspacing="2">
+        <tbody>
+            <tr>
+                <td style="width: 50%;">
+                    <h1>TV Shows</h1>
+                </td>
+                <td style="width: 25%;">
+
+                </td>
+                <td style="width: 25%; text-align: center"><button onclick="location.href='/new_show'" class="new">Add new Show</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table style="width: 80%; text-align: center; margin-left: auto; margin-right: auto;" cellpadding="2"
+        cellspacing="2">
+        <tbody>
+            <tr>
+                <td style="width: 50%;">
+                    <h2>Title</h2>
+                </td>
+                <td style="width: 25%;">
+                    <h2>Next Episode</h2>
+                </td>
+                <td style="width: 25%;"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table style="width: 80%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2"
+        cellspacing="2">
+        <tbody>
+            <tr style="height: 50px;">
+                <td style="width: 50%; text-align: center;">
+                    <a href="/show/friends">Friends</a>
+                </td>
+                <td style="width: 25%; text-align: center;">S01E03</td>
+                <td style="width: 25%; text-align: center"><button onclick="location.href='/show/friends/s01e03/mark'" class="seen">Mark as Seen</button></td>
+            </tr>
+            <tr style="height: 50px;">
+                <td style="width: 50%; text-align: center;">Rings of Power</td>
+                <td style="width: 25%; text-align: center;"></td>
+                <td style="width: 25%; text-align: center"><button onclick="location.href='/show/ringsofpower/nd/mark'" class="seen">Mark as Seen</button></td>
+            </tr>
+            <tr style="height: 50px;">
+                <td style="width: 50%; text-align: center;"></td>
+                <td style="width: 25%; text-align: center;"></td>
+                <td style="width: 25%; text-align: center"><button onclick="location.href='/show/nd/nd/mark'" class="seen">Mark as Seen</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
