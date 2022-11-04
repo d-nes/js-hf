@@ -36,23 +36,17 @@
     <table style="width: 80%; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2"
         cellspacing="2">
         <tbody>
-            <tr style="height: 50px;">
-                <td style="width: 50%; text-align: center;">
-                    <a href="/show/friends">Friends</a>
-                </td>
-                <td style="width: 25%; text-align: center;">S01E03</td>
-                <td style="width: 25%; text-align: center"><button onclick="location.href='/show/friends/s01e03/mark'" class="seen">Mark as Seen</button></td>
-            </tr>
-            <tr style="height: 50px;">
-                <td style="width: 50%; text-align: center;">Rings of Power</td>
-                <td style="width: 25%; text-align: center;"></td>
-                <td style="width: 25%; text-align: center"><button onclick="location.href='/show/ringsofpower/nd/mark'" class="seen">Mark as Seen</button></td>
-            </tr>
-            <tr style="height: 50px;">
-                <td style="width: 50%; text-align: center;"></td>
-                <td style="width: 25%; text-align: center;"></td>
-                <td style="width: 25%; text-align: center"><button onclick="location.href='/show/nd/nd/mark'" class="seen">Mark as Seen</button></td>
-            </tr>
+            
+            <% showlist.forEach(function(show){ %>
+                <tr style="height: 50px;">
+                    <td style="width: 50%; text-align: center;">
+                        <a href="/show/<%= show._id %>"><%= show.title %></a>
+                    </td>
+                    <td style="width: 25%; text-align: center;">n/a</td>
+                    <td style="width: 25%; text-align: center"><button onclick="location.href='/show/friends/s01e03/mark'" class="seen">Mark as Seen</button></td>
+                </tr>
+            <% }); %>
+                
         </tbody>
     </table>
 </body>

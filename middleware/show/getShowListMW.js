@@ -7,13 +7,13 @@ module.exports = function(objects) {
     return function (req, res, next) {
         console.log('getShowListMW');
         res.locals.showlist = [{
-            _id: 'showtitle1',
+            _id: 'friends',
             title: 'ShowTitle',
             description: 'Very long description.'
         }, 
         {
             _id: 'showtitle2',
-            title: 'ShowTitle',
+            title: 'ShowTitle2',
             description: 'Very long description.'
         }
         ];
