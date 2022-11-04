@@ -3,9 +3,7 @@ const db = require('../config/db');
 
 const Show = db.model('Show', {
     title: String,
-    description: String,
-    episodes: {
-        type: Schema.Types.ObjectId,
-        ref: 'Episode'
-    }
+    description: String
 });
+
+module.exports = Show;

@@ -6,6 +6,13 @@
  module.exports = function(objects) {
     return function (req, res, next) {
         console.log(`getEpisodeMW: ${req.params.showid} ${req.params.episodeid}`);
-        next();
+        res.locals.episode = {
+            _id: 'episode1',
+            title: 'EpsiodeTitle',
+            season: '01',
+            episode: '01',
+            seen: true
+        };
+        return next();
     }
 }

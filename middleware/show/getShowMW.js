@@ -6,6 +6,11 @@
  module.exports = function(objects) {
     return function (req, res, next) {
         console.log(`getShowMW: ${req.params.showid}`);
-        next();
+        res.locals.show = {
+            _id: 'showtitle',
+            title: 'ShowTitle',
+            description: 'Very long description.'
+        };
+        return next();
     }
 }

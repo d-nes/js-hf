@@ -6,6 +6,9 @@
  module.exports = function(objects) {
     return function (req, res) {
         console.log(`delEpisodeMW: ${req.params.showid} ${req.params.episodeid}`);
-        res.redirect(`/show/${req.params.showid}`);
+        if (typeof res.locals.episode === 'undefined') {
+            return next();
+        }
+        res.redirect(`/show/` + res.locals.show._id);
     }
 }

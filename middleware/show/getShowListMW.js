@@ -5,9 +5,19 @@
  */
 module.exports = function(objects) {
     return function (req, res, next) {
-        const shows = ['Friends', 'Rings of Power'];
         console.log('getShowListMW');
-        objects = shows;
-        next();
+        res.locals.showlist = [{
+            _id: 'showtitle1',
+            title: 'ShowTitle',
+            description: 'Very long description.'
+        }, 
+        {
+            _id: 'showtitle2',
+            title: 'ShowTitle',
+            description: 'Very long description.'
+        }
+        ];
+        
+        return next();
     }
 }

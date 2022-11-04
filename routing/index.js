@@ -18,15 +18,15 @@ module.exports = function (app, path) {
         episodeModel: episodeModel
     };
 
-    app.get('/',
-        getShowListMW(objects), //how do i get a return value form this??
+    app.use('/',
+        getShowListMW(objects),
         renderMW('index', path, objects));
 
-    app.get('/new_show',
+    app.use('/new_show',
         saveShowMW(objects),
         renderMW('new_show', path, objects));
 
-    app.get('/show/:showid',
+    app.use('/show/:showid',
         getShowMW(objects),
         getEpisodeListMW(objects),
         renderMW('show_details', path, objects));

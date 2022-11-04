@@ -15,19 +15,19 @@
             </tr>
             <tr>
                 <td style="width: 20%; text-align: right;">
-                    Title:
+                    <label for="title">Title:</label>
                 </td>
                 <td>
-                    <input type="text";>
+                    <input type="text" id="title" name="title" value="<%= (typeof show === 'undefined') ? '' : show.title %>">
                     <button onclick="location.href='/'" class="save">Save</button>
                 </td>
             </tr>
             <tr>
                 <td style="width: 20%; text-align: right;">
-                    Description:
+                    <label for="description">Description:</label>
                 </td>
                 <td>
-                    <input type="text";>
+                    <input type="text" id="description" name="description" value="<%= (typeof show === 'undefined') ? '' : show.description %>">
                     <button onclick="location.href='/'" class="cancel">Cancel</button>
                 </td>
             </tr>
