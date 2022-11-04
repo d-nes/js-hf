@@ -7,11 +7,14 @@
 module.exports = function(objects) {
     return function (req, res, next) {
         console.log('saveShowMW');
+        /*
         if ((typeof req.body.title === 'undefined') ||
             (typeof req.body.description === 'undefined')) {
             return next();
         }
-
+        
         return res.redirect("/");
+        */
+       next();
     }
 }

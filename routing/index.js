@@ -18,36 +18,36 @@ module.exports = function (app, path) {
         episodeModel: episodeModel
     };
 
-    app.use('/',
+    app.get('/',
         getShowListMW(objects),
         renderMW('index', path, objects));
 
-    app.use('/new_show',
+    app.get('/new_show',
         saveShowMW(objects),
         renderMW('new_show', path, objects));
 
-    app.use('/show/:showid',
+    app.get('/show/:showid',
         getShowMW(objects),
         getEpisodeListMW(objects),
         renderMW('show_details', path, objects));
 
-    app.use('/show/:showid/edit',
+    app.get('/show/:showid/edit',
         getShowMW(objects),
         saveShowMW(objects),
         renderMW('edit_show', path, objects));
 
-    app.use('/show/:showid/new_episode',
+    app.get('/show/:showid/new_episode',
         getShowMW(objects),
         saveEpisodeMW(objects),
         renderMW('new_episode', path, objects));
 
-    app.use('/show/:showid/:episodeid/edit',
+    app.get('/show/:showid/:episodeid/edit',
         getShowMW(objects),
         getEpisodeMW(objects),
         saveEpisodeMW(objects),
         renderMW('edit_episode', path, objects));
 
-    app.use('/show/:showid/:episodeid/mark',
+    app.get('/show/:showid/:episodeid/mark',
         getShowMW(objects),
         getEpisodeMW(objects),
         markEpisodeMW(objects));
