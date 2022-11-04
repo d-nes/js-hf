@@ -9,8 +9,14 @@ const getEpisodeMW = require('../middleware/episode/getEpisodeMW');
 const getEpisodeListMW = require('../middleware/episode/getEpisodeListMW');
 const markEpisodeMW = require('../middleware/episode/markEpisodeMW');
 
+const showModel = require('../models/show');
+const episodeModel = require('../models/episode');
+
 module.exports = function (app, path) {
-    var objects = [];
+    var objects = {
+        showModel: showModel,
+        episodeModel: episodeModel
+    };
 
     app.get('/',
         getShowListMW(objects), //how do i get a return value form this??
