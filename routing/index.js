@@ -18,46 +18,46 @@ module.exports = function (app, path) {
         episodeModel: episodeModel
     };
 
-    app.get('/',
-        getShowListMW(objects),
-        renderMW('index', path, objects));
-
-    app.get('/new_show',
+    app.use('/new_show',
         saveShowMW(objects),
         renderMW('new_show', path, objects));
-
-    app.get('/show/:showid',
-        getShowMW(objects),
-        getEpisodeListMW(objects),
-        renderMW('show_details', path, objects));
-
-    app.get('/show/:showid/edit',
+        
+    app.use('/show/:showid/edit',
         getShowMW(objects),
         saveShowMW(objects),
         renderMW('edit_show', path, objects));
 
-    app.get('/show/:showid/new_episode',
+    app.use('/show/:showid/new_episode',
         getShowMW(objects),
         saveEpisodeMW(objects),
         renderMW('new_episode', path, objects));
 
-    app.get('/show/:showid/:episodeid/edit',
+    app.use('/show/:showid/:episodeid/edit',
         getShowMW(objects),
         getEpisodeMW(objects),
         saveEpisodeMW(objects),
         renderMW('edit_episode', path, objects));
+        
+    app.use('/show/:showid/delete',
+        getShowMW(objects),
+        delShowMW(objects));
+        
+    app.use('/show/:showid/:episodeid/delete',
+        getShowMW(objects),
+        getEpisodeMW(objects),
+        delEpisodeMW(objects));
 
     app.get('/show/:showid/:episodeid/mark',
         getShowMW(objects),
         getEpisodeMW(objects),
         markEpisodeMW(objects));
-
-    app.get('/show/:showid/delete',
+        
+    app.get('/show/:showid',
         getShowMW(objects),
-        delShowMW(objects));
-
-    app.get('/show/:showid/:episodeid/delete',
-        getShowMW(objects),
-        getEpisodeMW(objects),
-        delEpisodeMW(objects));
+        getEpisodeListMW(objects),
+        renderMW('show_details', path, objects));
+        
+    app.get('/',
+        getShowListMW(objects),
+        renderMW('index', path, objects));
 }

@@ -13,32 +13,34 @@
                     </h1>
                 </td>
             </tr>
-            <tr>
-                <td style="width: 20%; text-align: right;">
-                    Title:
-                </td>
-                <td>
-                    <input type="text";>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 20%; text-align: right;">
-                    Season:
-                </td>
-                <td>
-                    <input type="text";>
-                    <button onclick="location.href='/show/<%= show._id %>'" class="save">Save</button>
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 20%; text-align: right;">
-                    Episode:
-                </td>
-                <td>
-                    <input type="text";>
-                    <button onclick="location.href='/show/<%= show._id %>'" class="cancel">Cancel</button>
-                </td>
-            </tr>
+            <form method="POST">
+                <tr>
+                    <td style="width: 20%; text-align: right;">
+                        <label for="title">Title:</label>
+                    </td>
+                    <td>
+                        <input type="text" id="title" name="title" required="required" value="<%= (typeof episode === 'undefined') ? '' : episode.title %>">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%; text-align: right;">
+                        <label for="season">Season:</label>
+                    </td>
+                    <td>
+                        <input type="text"; id="season" name="season" required="required" value="<%= (typeof episode === 'undefined') ? '' : episode.season %>">
+                        <input type="submit" class="save" value="Save">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20%; text-align: right;">
+                        <label for="episode">Episode:</label>                    
+                    </td>
+                    <td>
+                        <input type="text"; id="episode" name="episode" required="required" value="<%= (typeof episode === 'undefined') ? '' : episode.episode %>">
+                        <button onclick="location.href='/show/<%= show._id %>'" class="cancel">Cancel</button>
+                    </td>
+                </tr>
+            </form>
         </tbody>
     </table>
 

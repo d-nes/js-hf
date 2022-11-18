@@ -4,13 +4,18 @@
  * @returns 
  */
  module.exports = function(objects) {
+    const ShowModel = objects.showModel;
+
     return function (req, res, next) {
         console.log(`getShowMW: ${req.params.showid}`);
-        res.locals.show = {
-            _id: 'showtitle',
-            title: 'ShowTitle',
-            description: 'Very long description.'
-        };
-        return next();
+
+        ShowModel.findOne({ _id: req.params.showid }, (err, show) => {
+            if(err || !show) {
+                return next(err);
+            }
+
+            res.locals.show = show;
+            return next();
+        });
     }
 }

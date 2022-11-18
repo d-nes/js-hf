@@ -11,7 +11,7 @@
                     <h1>
                         <%= show.title %>
                         <button onclick="location.href='/show/<%= show._id %>/edit'" class="edit">Edit</button>
-                        <button onclick="location.href='/show/<%= show._id %>/delete'" lass="delete">Delete</button>
+                        <button onclick="location.href='/show/<%= show._id %>/delete'" class="delete">Delete</button>
                     </h1>
                 </td>
                 <td style="text-align: right;">
@@ -36,10 +36,10 @@
                         <input type="checkbox" checked>
                     </td>
                     <td style="width: 10%; text-align: center">
-                        <button onclick="location.href='/show/<%= show._id %>/s<%= episode.season %>e<%= episode.episode %>/edit'" class="edit">Edit</button>
+                        <button onclick="location.href='/show/<%= show._id %>/<%= episode._id %>/edit'" class="edit">Edit</button>
                     </td>
                     <td style="width: 10%; text-align: center">
-                        <button onclick="location.href='/show/<%= show._id %>/s<%= episode.season %>e<%= episode.episode %>/delete'" class="delete">Delete</button>
+                        <button onclick="location.href='/show/<%= show._id %>/<%= episode._id %>/delete'" class="delete">Delete</button>
                     </td>
                 </tr>
             <% }); %>

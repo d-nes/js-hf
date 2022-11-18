@@ -21,7 +21,7 @@ module.exports = function(objects) {
             res.locals.show = new ShowModel();
         }
 
-        res.locals.show.title = req.body.nev;
+        res.locals.show.title = req.body.title;
         res.locals.show.description = req.body.description;
 
         res.locals.show.save(err => {
@@ -30,6 +30,6 @@ module.exports = function(objects) {
             }
 
             return res.redirect('/');
-        })
+        });
     }
 }

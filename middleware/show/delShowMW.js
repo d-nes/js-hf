@@ -6,9 +6,17 @@
  module.exports = function(objects) {
     return function (req, res) {
         console.log(`delShowMW: ${req.params.showid}`);
+        
         if (typeof res.locals.show === 'undefined') {
             return next();
         }
-        res.redirect('/');
+        
+        res.locals.show.remove(err => {
+            if (err) {
+                return next(err);
+            }
+
+            return res.redirect('/');
+        });
     }
 }

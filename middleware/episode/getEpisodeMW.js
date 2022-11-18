@@ -4,15 +4,20 @@
  * @returns 
  */
  module.exports = function(objects) {
+    const EpisodeModel = objects.episodeModel;
+
     return function (req, res, next) {
         console.log(`getEpisodeMW: ${req.params.showid} ${req.params.episodeid}`);
-        res.locals.episode = {
-            _id: 'episode1',
-            title: 'EpsiodeTitle',
-            season: '01',
-            episode: '01',
-            seen: true
-        };
-        return next();
+        
+        EpisodeModel.findOne( { _id: req.params.episodeid },
+            (err, episode) => {
+                if (err || !episode) {
+                    return next(err);
+                }
+
+                res.locals.episode = episode;
+                return next();
+            }
+        )
     }
 }
