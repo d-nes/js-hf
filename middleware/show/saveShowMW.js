@@ -6,7 +6,8 @@
  */
 
 module.exports = function(objects) {
-    const ShowModel = require('../models/show');
+    const ShowModel = objects.showModel
+   //const ShowModel = objects["showModel"];
 
     return function (req, res, next) {
         console.log('saveShowMW');
