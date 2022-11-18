@@ -33,7 +33,17 @@
                     <td style="width: 15%; text-align: center">S<%= episode.season %>E<%= episode.episode %></td>
                     <td style="width: 60%;"><%= episode.title %></td>
                     <td style="width: 5%; text-align: center">
-                        <input type="checkbox" checked>
+                        <input type="checkbox" id="seen" onclick="return mark();" checked=<%= episode.seen %>>
+                        <script>
+                            function mark(){
+                                if(document.getElementById('seen').checked){
+                                    window.location='<%= show._id %>/<%= episode._id %>/mark'
+                                }
+                                else{
+                                    window.location='<%= show._id %>/<%= episode._id %>/unmark'
+                                }
+                            }
+                        </script>
                     </td>
                     <td style="width: 10%; text-align: center">
                         <button onclick="location.href='/show/<%= show._id %>/<%= episode._id %>/edit'" class="edit">Edit</button>
@@ -43,7 +53,6 @@
                     </td>
                 </tr>
             <% }); %>
-
         </tbody>
     </table>
 

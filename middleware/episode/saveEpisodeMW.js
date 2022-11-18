@@ -27,7 +27,7 @@ module.exports = function(objects) {
         res.locals.episode.title = req.body.title;
         res.locals.episode.season = req.body.season;
         res.locals.episode.episode = req.body.episode;
-        res.locals.episode.seen = false;
+        res.locals.episode.seen = req.body.seen;
         res.locals.episode._show = res.locals.show._id;
 
         res.locals.episode.save(err => {

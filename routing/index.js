@@ -51,6 +51,11 @@ module.exports = function (app, path) {
         getShowMW(objects),
         getEpisodeMW(objects),
         markEpisodeMW(objects));
+
+    app.get('/show/:showid/:episodeid/unmark',
+        getShowMW(objects),
+        getEpisodeMW(objects),
+        markEpisodeMW(objects));
         
     app.get('/show/:showid',
         getShowMW(objects),
