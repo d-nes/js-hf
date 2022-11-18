@@ -50,12 +50,12 @@ module.exports = function (app, path) {
     app.get('/show/:showid/:episodeid/mark',
         getShowMW(objects),
         getEpisodeMW(objects),
-        markEpisodeMW(objects));
+        markEpisodeMW(objects, true));
 
     app.get('/show/:showid/:episodeid/unmark',
         getShowMW(objects),
         getEpisodeMW(objects),
-        markEpisodeMW(objects));
+        markEpisodeMW(objects, false));
         
     app.get('/show/:showid',
         getShowMW(objects),
