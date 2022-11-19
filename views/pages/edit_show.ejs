@@ -28,7 +28,7 @@
                         <label for="description">Description:</label>
                     </td>
                     <td>
-                        <textarea id="description" name="description" value="<%= (typeof show === 'undefined') ? '' : show.description %>"></textarea>
+                        <textarea id="description" name="description"><%= (typeof show === 'undefined') ? '' : show.description %></textarea>
                         <button onclick="location.href='/show/<%= show._id %>'" class="cancel">Cancel</button>
                     </td>
                 </tr>

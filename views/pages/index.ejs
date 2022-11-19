@@ -42,8 +42,8 @@
                     <td style="width: 50%; text-align: center;">
                         <a href="/show/<%= show._id %>"><%= show.title %></a>
                     </td>
-                    <td style="width: 25%; text-align: center;">n/a</td>
-                    <td style="width: 25%; text-align: center"><button onclick="location.href='/show/<%= show._id %>/todo/mark'" class="seen">Mark as Seen</button></td>
+                    <td style="width: 25%; text-align: center;"><%= show._next %></td>
+                    <td style="width: 25%; text-align: center"><button onclick="location.href='/show/<%= show._id %>/<%= show._next %>/mark'" class="seen">Mark as Seen</button></td>
                 </tr>
             <% }); %>
                 

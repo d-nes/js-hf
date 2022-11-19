@@ -18,6 +18,14 @@ module.exports = function (objects) {
                 return next(err);
             }
 
+            episodelist.forEach(episode => {
+                var run = true; //Sajnálom késő van és nem tudom hogy helyettesítsem a break-et
+                if(episode.seen != true && run){
+                    res.locals.show._next = episode._id;
+                    run = false;
+                }
+            }); //Nem mintha működne
+
             res.locals.episodelist = episodelist;
             return next();
         });
