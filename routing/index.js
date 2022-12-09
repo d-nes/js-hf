@@ -47,12 +47,12 @@ module.exports = function (app, path) {
         getEpisodeMW(objects),
         delEpisodeMW(objects));
 
-    app.get('/show/:showid/:episodeid/mark',
+    app.get('/show/:showid/:episodeid/:next/mark',
         getShowMW(objects),
         getEpisodeMW(objects),
         markEpisodeMW(objects, true));
 
-    app.get('/show/:showid/:episodeid/unmark',
+    app.get('/show/:showid/:episodeid/:next/unmark',
         getShowMW(objects),
         getEpisodeMW(objects),
         markEpisodeMW(objects, false));

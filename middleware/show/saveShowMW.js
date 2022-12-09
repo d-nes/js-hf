@@ -23,6 +23,7 @@ module.exports = function(objects) {
 
         res.locals.show.title = req.body.title;
         res.locals.show.description = req.body.description;
+        res.locals.show.next = "";
 
         res.locals.show.save(err => {
             if(err) {

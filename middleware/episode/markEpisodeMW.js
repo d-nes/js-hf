@@ -14,6 +14,8 @@
                 return next(err);
             }
 
+            if(req.params.next == "next")
+                return res.redirect('/')    
             return res.redirect('/show/' + res.locals.show._id);
         });
     }
